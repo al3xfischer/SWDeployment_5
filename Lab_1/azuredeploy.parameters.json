@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccountName": {
-            "value": "GEN-UNIQUE"
+            "value": "aflab1"
         },
         "fileShareName": {
-            "value": "GEN-UNIQUE"
+            "value": "aflab1"
         },
         "location": {
             "value": "northeurope"
