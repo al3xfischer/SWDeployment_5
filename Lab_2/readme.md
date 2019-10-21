@@ -7,5 +7,6 @@ https://fhwn19-node-af.azurewebsites.net
 Production Website:
 https://fhwn19-node-prod-af.azurewebsites.net
 
-Ein Release muss durch einen Benutzer freigegeben werden.
+
+Ein Release muss durch einen ausgewählten Benutzer freigegeben werden.
 Siehe Release_Trigger.png
