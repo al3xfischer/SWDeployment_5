@@ -1,3 +1,11 @@
+Node-App Code:
+https://github.com/al3xfischer/node-app-swd.git
 
-Trigger für einen Release ist ein erfolgreicher Build vom "release" Branch.
-Tests werden beim build durchgeführt. (Erfolgreich und Fehler)
+Test Website:
+https://fhwn19-node-af.azurewebsites.net
+
+Production Website:
+https://fhwn19-node-prod-af.azurewebsites.net
+
+Ein Release muss durch einen Benutzer freigegeben werden.
+Siehe Release_Trigger.png
