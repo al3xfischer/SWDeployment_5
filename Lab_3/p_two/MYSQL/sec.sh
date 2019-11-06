@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt-get install -y expect
+apt-get -y install expect
 
 MYSQL_ROOT_PASSWORD=abcd1234
 
@@ -24,6 +24,6 @@ expect eof
 
 echo "$SECURE_MYSQL"
 
-apt-get purge -y expect
+apt-get -y purge expect
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/my.cnf

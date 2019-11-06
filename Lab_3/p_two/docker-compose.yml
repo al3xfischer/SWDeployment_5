@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+   db:
+     image: al3xfischer/mysql
+     restart: always
+     ports:
+        - "3306:3306"
+
+   wordpress:
+     depends_on:
+       - db
+     image: al3xfischer/wp
+     ports:
+       - "80:80"
+     restart: always
+     environment:
+       DB_HOST: db
+       DB_USER: root
+       DB_PASSWORD: abcd1234
+       DB_NAME: mysql
+volumes:
+    db_data: {}
