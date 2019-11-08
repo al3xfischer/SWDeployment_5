@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 
 services:
    db:
@@ -6,6 +6,16 @@ services:
      restart: always
      ports:
         - "3306:3306"
+     volumes:
+        - type: volume
+          source: dbdata
+          target: /var/lib/mysql
+     restart: always
+     environment:
+      DB_USER: wpuser
+      DB_PASSWORD: wppassword
+      DB_NAME: wordpress
+        
 
    wordpress:
      depends_on:
@@ -13,11 +23,21 @@ services:
      image: al3xfischer/wp
      ports:
        - "80:80"
+     volumes:
+       - type: volume
+         source: wpconfig
+         target: /etc/wordpress/
+       - type: volume
+         source: wpuploads
+         target: /var/www/html/wp-content/uploads/
      restart: always
      environment:
-       DB_HOST: db
-       DB_USER: root
-       DB_PASSWORD: abcd1234
-       DB_NAME: mysql
+      DB_USER: wpuser
+      DB_PASSWORD: wppassword
+      DB_NAME: wordpress
+      DB_HOST: db:3306
+
 volumes:
-    db_data: {}
+  dbdata:
+  wpconfig:
+  wpuploads:
